@@ -6,7 +6,7 @@ RUN git clone https://github.com/j4k0xb/webcrack.git && \
     ([[ "$TAG" = "latest" ]] || git checkout ${TAG}) && \
     rm -rf .git
 
-FROM node:18-alpine AS build
+FROM node:18 AS build
 
 WORKDIR /webcrack
 COPY --from=base /git/webcrack .
